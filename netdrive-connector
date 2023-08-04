@@ -18,7 +18,7 @@ echo "${blue} ||                       ||       ||              ||${std}"
 echo "${blue} ||                       ||       ||      |||     ||${std}"
 echo "${blue}  ||                     ||||||||||||              ||${std}"
 echo "${blue}   |||||||||||||||||||||||                         ||${std}"
-echo "NETDRIVE-CONNECTOR by Nightstalker"
+echo "  NETDRIVE-CONNECTOR by Nightstalker"
 echo ""
 echo ""
 read -p "${green}Enter the IP of the Server: ${std}" ip_adress;
