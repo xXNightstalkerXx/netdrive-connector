@@ -3,7 +3,18 @@ Netdrive Connector is just a small bash Script which guides you through mounting
 
 Download and install the Repository like so:
 -
+Clone the Repo:
+
     sudo git clone https://github.com/xXNightstalkerXx/netdrive-connector.git
+
+Navigate into the new Folder:
+
     cd netdrive-connector
+
+Make the file executable:
+
     sudo chmod 0755 netdrive-connector
+
+Move the File into the /usr/bin Folder so you can launch it from everywhere:
+
     sudo mv netdrive-connector /usr/bin
