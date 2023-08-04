@@ -1,3 +1,4 @@
+<pre>
 # netdrive-connector
 --------------------------------------------------------------------------------
 Description
@@ -35,3 +36,4 @@ Delete the junk:
 Have fun and launch the Script from anywhere just by typing:
 
     netdrive-connector
+</pre>
