@@ -87,7 +87,7 @@ then
         then
                 echo ""
                 echo "${red}The given Mountpath contains precious Files!${std}"
-                echo "${yellow}If you proceed with mounting your Netdrive there you will lose access to those Files!${std}"
+                echo "${yellow}If you proceed with mounting your Netdrive you will lose access to those Files!${std}"
                 echo "${yellow}You should gain access to your Files again by unmounting the Drive though.${std}"
 
                 echo ""
