@@ -26,7 +26,7 @@ echo "${blue}Checking if the Host is reachable...${std}"
 
 if ping -c 1 $ip_adress &> /dev/null
 then
-        echo "${green}The Host is reachable!${std}"
+        echo "${blue}The Host is reachable!${std}"
         i=1
 else
         i=0
