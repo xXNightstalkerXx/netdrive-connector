@@ -72,7 +72,7 @@ echo "TOPSECRECT"
 
 echo ""
 echo ""
-read -s -p "${green}Enter the absolut Path to the Mountpoint on this System: ${std}" mountpath;
+read -p "${green}Enter the absolut Path to the Mountpoint on this System: ${std}" mountpath;
 echo ""
 echo "${blue}Checking if the Mountpoint exists...${std}"
 echo "$mountpath"
