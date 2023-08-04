@@ -27,3 +27,7 @@ Move out of the Git Folder:
 Delete the junk:
 
     sudo rm -d -r netdrive-connector
+
+Have fun and launch the Script from anywhere just by typing:
+
+    netdrive-connector
