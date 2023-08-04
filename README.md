@@ -1,6 +1,7 @@
 # netdrive-connector
 Netdrive Connector is just a small bash Script which guides you through mounting a Network attached Drive.
 
+
 Download and install the Repository like so:
 -
 Clone the Repo:
@@ -18,3 +19,11 @@ Make the file executable:
 Move the File into the /usr/bin Folder so you can launch it from everywhere:
 
     sudo mv netdrive-connector /usr/bin
+
+Move out of the Git Folder:
+
+    cd ..
+
+Delete the junk:
+
+    sudo rm -d -r netdrive-connector
