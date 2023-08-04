@@ -22,11 +22,12 @@ echo "  NETDRIVE-CONNECTOR by Nightstalker"
 echo ""
 echo ""
 read -p "${green}Enter the IP of the Server: ${std}" ip_adress;
+echo "${blue}Checking if the Host is reachable...${std}"
 
 if ping -c 1 $ip_adress &> /dev/null
 then
         echo ""
-        echo "${blue}The Host is reachable!${std}"
+        echo "${green}The Host is reachable!${std}"
         i=1
 else
         i=0
@@ -34,8 +35,12 @@ fi
 
 while [[ $i -eq 0 ]]
 do
+	echo ""
         echo "${red}The Host is not reachable! Please try a different IP!${std}"
         read -p "Enter the IP of the Server: " ip_adress;
+
+	echo ""
+	echo "${blue}Checking if the Host is reachable...${std}"
         if ping -c 1 $ip_adress &> /dev/null
         then
                 echo ""
