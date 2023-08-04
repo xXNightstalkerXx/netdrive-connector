@@ -4,14 +4,12 @@
 Description
 -
 Netdrive Connector is just a small bash Script which guides you through mounting a Network attached Drive.
-
 <pre>
     
     
     
     
 </pre>
-
 --------------------------------------------------------------------------------
 Download and install the Repository
 -
