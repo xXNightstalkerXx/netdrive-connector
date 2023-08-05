@@ -9,7 +9,7 @@ Netdrive Connector is just a small bash Script which guides you through mounting
 --------------------------------------------------------------------------------
 INSTALLATION
 -
-    wget https://github.com/xXNightstalkerXx/netdrive-connector/blob/main/netdrive-connector
+    wget https://raw.githubusercontent.com/xXNightstalkerXx/netdrive-connector/master/netdrive-connector
 Download the netdrive-connector Script with wget
 
     sudo chmod 0755 netdrive-connector
