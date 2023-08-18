@@ -1,12 +1,12 @@
 #! /bin/bash
 
 #Color Declarations
-std=`tput setaf 15`
-red=`tput setaf 9 bold`
-green=`tput setaf 10 bold`
-yellow=`tput setaf 11 bold`
-pink=`tput setaf 57`
-blue=`tput setaf 27 bold`
+std=$(tput setaf 15)
+red=$(tput setaf 9 bold)
+green=$(tput setaf 10 bold)
+yellow=$(tput setaf 11 bold)
+pink=$(tput setaf 57)
+blue=$(tput setaf 27 bold)
 
 #Main Script
 echo ""
@@ -24,7 +24,7 @@ echo ""
 read -p "${green}Enter the IP of the Server: ${std}" ip_adress;
 echo "${blue}Checking if the Host is reachable...${std}"
 
-if ping -c 1 $ip_adress &> /dev/null
+if ping -c 1 "$ip_adress" &> /dev/null
 then
         echo "${blue}The Host is reachable!${std}"
         i=1
@@ -36,11 +36,11 @@ while [[ $i -eq 0 ]]
 do
 	echo ""
         echo "${red}The Host is not reachable! Please try a different IP!${std}"
-        read -p "Enter the IP of the Server: " ip_adress;
+        read -r -p "Enter the IP of the Server: " ip_adress;
 
 	echo ""
 	echo "${blue}Checking if the Host is reachable...${std}"
-        if ping -c 1 $ip_adress &> /dev/null
+        if ping -c 1 "$ip_adress" &> /dev/null
         then
                 echo "${blue}The Host is reachable!${std}"
                 i=1
@@ -51,28 +51,28 @@ done
 
 echo ""
 echo ""
-read -p "${green}Enter the Sharename of the Drive: ${std}" sharename;
+read -r -p "${green}Enter the Sharename of the Drive: ${std}" sharename;
 echo ""
 echo "${blue}The Sharename is:${std}"
 echo "$sharename"
 
 echo ""
 echo ""
-read -p "${green}Enter the Username for the Server: ${std}" user;
+read -r -p "${green}Enter the Username for the Server: ${std}" user;
 echo ""
 echo "${blue}The Username is:${std}"
 echo "$user"
 
 echo ""
 echo ""
-read -s -p "${green}Enter the Password of the User: ${std}" password;
+read -r -s -p "${green}Enter the Password of the User: ${std}" password;
 echo ""
 echo "${blue}The Password is:${std}"
 echo "TOPSECRECT"
 
 echo ""
 echo ""
-read -p "${green}Enter the absolut Path to the Mountpoint on this System: ${std}" mountpath;
+read -r -p "${green}Enter the absolut Path to the Mountpoint on this System: ${std}" mountpath;
 echo ""
 echo "${blue}Checking if the Mountpoint exists...${std}"
 echo "$mountpath"
@@ -83,7 +83,7 @@ then
         echo "${blue}The given Mountpoint already exists!${std}"
         echo "${blue}Checking if there are Files in it...${std}"
 
-        if [ "$(ls -A $mountpath)" ]
+        if [ "$(ls -A "$mountpath")" ]
         then
                 echo ""
                 echo "${red}The given Mountpath contains precious Files!${std}"
@@ -92,13 +92,13 @@ then
 
                 echo ""
                 echo "${blue}Do you want to proceed?${std}"
-                read -p "Yes (y)/ No (n): " n;
+                read -r -p "Yes (y)/ No (n): " n;
 
                 while ! [[ "$n" =~ ^(y|n)$ ]];
                 do
                         echo ""
                         echo "${red}Wrong Input! Please type 'y' for 'YES' or 'n' for 'NO'!${std}"
-                        read -p "Yes (y)/ No (n): " n;
+                        read -r -p "Yes (y)/ No (n): " n;
                 done
 
                 if [[ "$n" =~ ^(y)$ ]];
@@ -107,7 +107,7 @@ then
                         echo "${blue}Proceeding to mount the Drive!${std}"
                         echo "${blue}Mounting the Drive now...${std}"
 
-                        if sudo mount -t cifs -o user=$user,password=$password,defaults,nofail,_netdev,file_mode=0777,dir_mode=0777 //$ip_adress/$sharename $mountpath &> /dev/null
+                        if sudo mount -t cifs -o user="$user",password="$password",defaults,nofail,_netdev,file_mode=0777,dir_mode=0777 //"$ip_adress"/"$sharename" "$mountpath" &> /dev/null
                         then
                                 echo ""
                                 echo "${green}Netdrive successfully mounted!${std}"
@@ -129,7 +129,7 @@ then
                 echo "${blue}Mountpath is empty!${std}"
                 echo "${blue}Mounting the Drive now...${std}"
 
-                if sudo mount -t cifs -o user=$user,password=$password,defaults,nofail,_netdev,file_mode=0777,dir_mode=0777 //$ip_adress/$sharename $mountpath &> /dev/null
+                if sudo mount -t cifs -o user="$user",password="$password",defaults,nofail,_netdev,file_mode=0777,dir_mode=0777 //"$ip_adress"/"$sharename" "$mountpath" &> /dev/null
                 then
                         echo ""
                         echo "${green}Netdrive successfully mounted!${std}"
@@ -146,13 +146,13 @@ else
         echo "${red}The given Mountpoint doesn't exist!${std}"
         echo "${blue}Creating the Mountpoint...${std}"
         
-        if sudo mkdir -p $mountpath &> /dev/null
+        if sudo mkdir -p "$mountpath" &> /dev/null
         then
                 echo ""
                 echo "${blue}Mountpoint created succesfully!${std}"
                 echo "${blue}Mounting the Drive now...${std}"
 
-                if sudo mount -t cifs -o user=$user,password=$password,defaults,nofail,_netdev,file_mode=0777,dir_mode=0777 //$ip_adress/$sharename $mountpath &> /dev/null
+                if sudo mount -t cifs -o user="$user",password="$password",defaults,nofail,_netdev,file_mode=0777,dir_mode=0777 //"$ip_adress"/"$sharename" "$mountpath" &> /dev/null
                 then
                         echo ""
                         echo "${green}Netdrive successfully mounted!${std}"
@@ -170,5 +170,3 @@ else
                 exit 1
         fi  
 fi
-
-#sudo mount -t cifs -o user=$user,password=$password,defaults,nofail,_netdev,file_mode=0777,dir_mode=0777 //$ip_adress/$sharename $mountpath
