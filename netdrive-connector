@@ -124,7 +124,7 @@ then
                         echo "${red}Exiting Script now!${std}"
 	                      exit 1
                 fi
-	      else
+	else
                 echo ""
                 echo "${blue}Mountpath is empty!${std}"
                 echo "${blue}Mounting the Drive now...${std}"
