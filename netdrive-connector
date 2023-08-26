@@ -21,7 +21,7 @@ echo "${blue}  |||||||||||||||||||||||                         ||${std}"
 echo "NETDRIVE-CONNECTOR by Nightstalker"
 echo ""
 echo ""
-read -p "${green}Enter the IP of the Server: ${std}" ip_adress;
+read -r -p "${green}Enter the IP of the Server: ${std}" ip_adress;
 echo "${blue}Checking if the Host is reachable...${std}"
 
 if ping -c 1 "$ip_adress" &> /dev/null
