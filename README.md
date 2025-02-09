@@ -1,5 +1,6 @@
 
 # netdrive-connector
+
 Netdrive Connector is just a small bash Script which guides you through mounting a Network attached Drive to a Linux OS.
 </br>
 </br>
@@ -7,8 +8,10 @@ Netdrive Connector is just a small bash Script which guides you through mounting
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+
 INSTALLATION
 -
+
     wget https://raw.githubusercontent.com/xXNightstalkerXx/netdrive-connector/master/netdrive-connector
 Download the netdrive-connector Script with wget
 
